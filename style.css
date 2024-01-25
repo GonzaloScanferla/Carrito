@@ -1,0 +1,177 @@
+/* -------DEFINICIONES COMUNES--------- */
+/* Importo las fonts */
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap);
+}
+
+/* Defino variables comunes */
+:root {
+    --FW_XLight: 300;
+    --FW_Light:400;
+    --FW_Medium: 500;
+    --FW_Bold: 700;
+    --FS_XS: 0.7rem;
+    --FS_S: 0.9rem;
+    --FS_M: 1rem;
+    --FS_L: 1.3rem;
+    --FS_XL: 1.8rem;
+    --FS_XXL: 2rem;
+    --F_Roboto: 'Roboto', sans-serif;
+    --C_Grey: rgb(77, 77, 77);
+    --C_LGrey: rgba(218, 218, 218, 0.473);
+    --C_LBlue: rgb(99, 138, 209);
+}
+
+/* Sobreescribo los formatos por defecto */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--F_Roboto);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin: 12px 0;
+    font-size: var(--FS_XXL);
+    font-weight: var(--FW_Bold);
+}
+
+h2 {
+    margin: 8px 0;
+    font-size: var(--FS_XL);
+    font-weight: var(--FW_Bold);
+}
+
+h3 {
+    font-size: var(--FS_L);
+    font-weight: var(--FW_Bold);
+    margin: 8px 0;
+}
+
+h4 {
+    font-size: var(--FS_M);
+    font-weight: var(--FW_Bold);
+    margin: 8px 0;
+}
+
+
+
+p {
+    font-size: var(--FS_S);
+    font-weight: var(--FW_Medium);
+    margin: 0.4rem 0;
+    line-height: 1.3rem;
+    color: var(--C_Grey)
+}
+
+
+/* Defino las clases genericas */
+/* Botones */
+.btn {
+    padding: 8px 12px;
+    border-radius: 5px; 
+    font-weight: var(--FW_Medium);
+    font-size: var(--FS_M);
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+
+}
+
+/* paddings */
+.pad_0_16 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.pad_0_12 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.w_max {
+    max-width: 1000px;
+}
+
+/* -------- CLASES DE LA HEADER ---------  */
+/* Header wrapper */
+.separator{
+    border-bottom: 2px solid var(--C_LGrey);
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+
+/* -------- CLASES DEL BODY ---------  */
+/* ---- LISTA DE PRODUCTOS----*/
+
+.wrapper--body{
+    align-items: baseline;
+}
+.productList-table {
+    width: 75%;
+}
+
+.productList-header p {
+    text-align: left;
+}
+.productList-name {
+    font-weight: var(--FW_Bold);
+    font-size: var(--FS_L);
+}
+.productList-ref {
+    font-size: var(--FS_XS);
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+    appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.product_qty input {
+  width: 45px;
+  height: 42px;
+  line-height: 1;
+  padding-left: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+/* ---- CARRITO----*/
+.w_cart {
+    background-color: var(--C_LGrey);
+    min-width: 250px;
+}
+
+.cart-list {
+    width: 100%;
+}
