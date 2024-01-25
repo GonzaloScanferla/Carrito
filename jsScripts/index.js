@@ -62,12 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then ((data) => {
         ProductList (data)
         const cart = new Cart (data)
-        console.log (cart.init ())
-        
-        // Instancio el carrito
-        //   const cart = new Cart(productInstances);
-        //   cart.init();
-        
-        //   initializeTable (productInstances)
+        cart.init()
+
     })
 })

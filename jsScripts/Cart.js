@@ -13,7 +13,7 @@ class Cart {
       this.#cart.push({
         SKU: SKU,
         title: title,
-        price: price,
+        price: Number(price),
         qty: 0,
         total: 0,
       });
@@ -34,17 +34,17 @@ class Cart {
     } else if (operation === "remove") {
       currentProduct.qty = currentProduct.qty > 0 ? currentProduct.qty - 1 : 0;
     }
-    currentProduct.total = (currentProduct.qty * currentProduct.price).toFixed(
-      2
+    currentProduct.total = Number((currentProduct.qty * currentProduct.price).toFixed(2)
     );
     return currentProduct.qty;
   }
 
   totalCart() {
-    let totalCart = 0;
-    this.#cart.forEach((product) => {
-      totalCart = (Number(totalCart) + Number(product.total)).toFixed(2);
-    });
+    // let totalCart = 0;
+    let totalCart = this.#cart.reduce ((total, product) => total + Number(product.total))
+    // this.#cart.forEach((product) => {
+    //   totalCart = (Number(totalCart) + Number(product.total)).toFixed(2);
+    // });
     return totalCart;
   }
 }
