@@ -39,11 +39,11 @@ const ProductList = (data) => {
     DOMproductList.innerHTML = productsList
 
     const buttons = document.querySelectorAll (".js-product_qty")
-    console.log (buttons)
     buttons.forEach (button => {
         button.addEventListener ("click", (e) => {
         const operation = e.target.dataset.btn;
-        this.buttonClickHandler(productInfo.SKU, operation, e.currentTarget);
+        // console.log (product.returnInfo)
+        // this.buttonClickHandler(productInfo.SKU, operation, e.currentTarget);
         })
     })
 }
@@ -57,10 +57,12 @@ const ProductList = (data) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    fetch ("https://jsonblob.com/api/jsonBlob/%7Bblob_id%7D/1200017574896459776")
+    fetch ("https://jsonblob.com/api/jsonBlob/1200023630225727488")
     .then (response => response.json())
     .then ((data) => {
         ProductList (data)
+        const cart = new Cart (data)
+        console.log (cart.init ())
         
         // Instancio el carrito
         //   const cart = new Cart(productInstances);
