@@ -19,6 +19,10 @@ class Cart {
       });
     });
   }
+  returnCurrency () {
+    return this.#currency
+  }
+
   returnCart() {
     return this.#cart;
   }
@@ -26,6 +30,7 @@ class Cart {
   returnCartProduct(SKU) {
     return this.#cart.find((product) => product.SKU == SKU);
   }
+
 
   update(SKU, operation) {
     const currentProduct = this.returnCartProduct(SKU);
@@ -40,11 +45,6 @@ class Cart {
   }
 
   totalCart() {
-    // let totalCart = 0;
-    let totalCart = this.#cart.reduce ((total, product) => total + Number(product.total))
-    // this.#cart.forEach((product) => {
-    //   totalCart = (Number(totalCart) + Number(product.total)).toFixed(2);
-    // });
-    return totalCart;
+    return this.#cart.reduce ((total,product) => (total + product.total),0)
   }
 }
