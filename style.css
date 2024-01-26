@@ -157,8 +157,12 @@ input[type=number]
   -moz-appearance: textfield;
 }
 
+.product_qty {
+    width: 110px;
+}
+
 .product_qty input {
-  width: 45px;
+  width: 42px;
   height: 42px;
   line-height: 1;
   padding-left: 20px;
@@ -175,3 +179,14 @@ input[type=number]
 .cart-list {
     width: 100%;
 }
+
+.cart-total {
+    font-weight: var(--FW_Bold);
+    font-size: var(--FS_M);
+    border-top: 1px solid var(--C_Grey);
+}
+
+.cart-total td {
+    border-top: 1px solid var(--C_Grey);
+}
+
