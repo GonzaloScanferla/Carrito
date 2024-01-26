@@ -1,3 +1,4 @@
+// Función encargada del pintado de la tabla principal del carro
 const ProductList = (data) => {
     const DOMproductList = document.querySelector("#DOMproductsList")
     let productsList = "" 
@@ -10,18 +11,31 @@ const ProductList = (data) => {
     })
     DOMproductList.innerHTML = productsList
 
+    // Bloque para el input de la cantidad
     const jsSpinWraps = DOMproductList.querySelectorAll (`.js-spin_wrap`)
     const spinButtons = new SpinButtons (cart)
     jsSpinWraps.forEach (wrap => {
         const SKU = wrap.dataset.sku
-        const newButton = spinButtons.newButton (wrap, SKU)
-        spinButtons.newButtonListener (wrap,cart)
+        spinButtons.newButton (wrap, SKU)
+        const productTotal = document.querySelector(`.js-product_total[data-sku='${wrap.dataset.sku}']`)
+        spinButtons.newButtonListener (wrap,cart,productTotal)
         
     }) 
 }
 
+// Función encargada del pintado del resumen del carrito
 const totalCart = (cart) => {
-    cart.returnCart.filter (total)
+    currentCart = cart.returnCart().filter (product => product.qty > 0)
+    DOMcurrentCart = document.querySelector (".js-cart-list")
+    let text =""
+    currentCart.forEach (product => {
+        text = text + `<tr> <td>${product.title}</td><td>${product.total} ${cart.returnCurrency()}</td></tr>`
+        })
+    DOMcurrentCart.innerHTML = text
+    const totalCart = document.createElement ("tr")
+    totalCart.classList = "cart-total"
+    totalCart.innerHTML = `<td class="">TOTAL</td><td>${cart.totalCart()} ${cart.returnCurrency()}</td>`
+    DOMcurrentCart.append (totalCart)
 }
 
 

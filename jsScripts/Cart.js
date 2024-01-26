@@ -45,6 +45,6 @@ class Cart {
   }
 
   totalCart() {
-    return this.#cart.reduce ((total,product) => (total + product.total),0)
+    return this.#cart.reduce ((total,product) => (total + product.total),0).toFixed(2)
   }
 }
